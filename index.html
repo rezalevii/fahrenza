@@ -2,6 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Desa Karangtengah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
@@ -11,16 +15,220 @@
         <link rel="stylesheet" href="css/qgis2web.css">
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
-        html, body, #map {
+		/* html, body, #map {
             width: 100%;
             height: 100%;
             padding: 0;
             margin: 0;
+        }*/
+	   html, body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+	   }
+#map {
+    width: 100%;
+    height: 70vh; /* Mengambil 70% dari tinggi viewport */
+}
+
+ body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #34495e;
+        }
+
+        header {
+            background-image: url('https://source.unsplash.com/1600x900/?village,nature');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 20px;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Mengatur konten menjadi vertikal */
+            gap: 20px; /* Jarak antar section */
+        }
+
+        section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s;
+            text-align: center; /* Rata tengah untuk teks di dalam section */
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-scroll {
+            display: flex;
+            overflow-x: auto; /* Mengizinkan scroll horizontal */
+            padding: 10px 0;
+            justify-content: center; /* Centering images */
+        }
+
+        .image-scroll img {
+            height: 200px; /* Tinggi gambar */
+            margin: 0 10px; /* Jarak antar gambar */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            header {
+                padding: 50px 20px;
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .image-scroll img {
+                height: 150px; /* Tinggi gambar lebih kecil di perangkat mobile */
+            }
+        }
+		
+       
         </style>
         <title></title>
     </head>
     <body>
+	     <nav>
+        <div class="logo">Profil Desa Karangtengah</div>
+        <ul id="nav-links">
+            <li><a href="#profil">Profil Desa</a></li>
+            <li><a href="#sejarah">Sejarah</a></li>
+            <li><a href="#visi-misi">Visi dan Misi</a></li>
+            <li><a href="#kegiatan">Kegiatan Masyarakat</a></li>
+            <li><a href="#peta">Peta Administrasi</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Selamat Datang di Desa Karangtengah</h1>
+        <p>Temukan keindahan dan budaya desa kami yang terletak di kawasan wisata.</p>
+    </header>
+
+    <div class="container">
+        <section id="profil">
+            <h2>Profil Desa</h2>
+            <p>Desa Karangtengah adalah desa yang kaya akan budaya dan tradisi. Terletak di tengah alam yang indah, desa ini memiliki berbagai potensi yang dapat dikembangkan untuk kesejahteraan masyarakat.</p>
+        </section>
+
+        <section id="sejarah">
+            <h2>Sejarah</h2>
+            <p>Sejak awal berdirinya pada tahun 1900, Desa Karangtengah telah menjadi saksi bisu perjalanan sejarah yang dramatis. Dalam setiap sudut desa ini, terdapat cerita tentang perjuangan dan harapan masyarakatnya. Pada masa penjajahan, desa ini menjadi tempat berkumpulnya para pejuang yang berjuang untuk kemerdekaan. Dengan semangat yang tak pernah padam, mereka berusaha mempertahankan tanah air dari penjajahan. Seiring berjalannya waktu, desa ini mengalami transformasi yang luar biasa, dari daerah pertanian yang subur menjadi pusat pendidikan dan pariwisata yang berkembang pesat. Setiap peristiwa penting dalam sejarah desa ini, seperti pembangunan infrastruktur jalan dan fasilitas umum, menjadi tonggak penting yang mendukung pertumbuhan ekonomi dan sosial masyarakat.</p>
+        </section>
+
+        <section id="visi-misi">
+            <h2>Visi dan Misi</h2>
+            <p><strong>Visi:</strong> Membangun desa yang sejahtera dan mandiri.</p>
+            <p><strong>Misi:</strong></p>
+            <p>- Meningkatkan kualitas hidup masyarakat melalui pendidikan, kesehatan, dan ekonomi.</p>
+            <p>- Mengembangkan potensi wisata desa untuk meningkatkan kesejahteraan masyarakat.</p>
+        </section>
+
+        <section id="kegiatan">
+            <h2>Kegiatan Masyarakat</h2>
+            <p>Desa Karangtengah memiliki berbagai kegiatan masyarakat, seperti acara tahunan, festival budaya, dan program pembangunan yang melibatkan partisipasi aktif dari warga desa.</p>
+            <div class="image-scroll">
+                <img src="https://source.unsplash.com/200x200/?event" alt="Kegiatan 1">
+                <img src="https://source.unsplash.com/200x200/?festival" alt="Kegiatan 2">
+                <img src="https://source.unsplash.com/200x200/?community" alt="Kegiatan 3">
+                <img src="https://source.unsplash.com/200x200/?celebration" alt="Kegiatan 4">
+                <img src="https://source.unsplash.com/200x200/?culture" alt="Kegiatan 5">
+            </div>
+        </section>
+ <div class="content-section" id="peta">
+        <h2>Peta Administrasi Desa</h2>
+	 </div>
+    <footer>
+        <p>&copy; 2023 Profil Desa Karangtengah. Semua hak dilindungi.</p>
+    </footer>
+    
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
