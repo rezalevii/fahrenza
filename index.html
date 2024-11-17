@@ -252,6 +252,14 @@
         <script src="data/Rumah_8.js"></script>
         <script src="data/Clipped_9.js"></script>
         <script>
+// Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+		
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
         }).fitBounds([[-7.346950153557561,109.22230353779987],[-7.344444441236986,109.22624597254317]]);
