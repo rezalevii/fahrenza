@@ -23,6 +23,16 @@
             margin: 0;
         }
 
+
+	html, body {
+    height: auto; /* Ubah dari 100% menjadi auto */
+    overflow-y: auto; /* Pastikan scroll vertikal diizinkan */
+}
+
+#map {
+    height: 500px; /* Atur tinggi peta secara eksplisit */
+}
+		
 	 body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -216,11 +226,11 @@
 
         <section id="peta">
             <h2>Peta Administrasi</h2>
-           <div id="map">
-        </div>
+         
         </section>
     </div>
-
+  <div id="map">
+        </div>
     <footer>
         <p>&copy; 2023 Profil Desa Karangtengah. Semua hak dilindungi.</p>
     </footer>
